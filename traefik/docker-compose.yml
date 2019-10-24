@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+
+  traefik:
+    restart: always
+    image: traefik:1.7-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - web
+    volumes:
+      - ./traefik.toml:/etc/traefik/traefik.toml
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+networks:
+  web:
+    driver: overlay
+    external: true

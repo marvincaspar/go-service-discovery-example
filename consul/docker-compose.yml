@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  consul:
+    restart: always
+    image: consul:1.6
+    ports:
+      - 8500:8500
+    networks:
+      - web
+
+networks:
+  web:
+    driver: overlay
+    external: true

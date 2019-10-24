@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+  greeting-service:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8098:8098
+    networks:
+      - web
+
+networks:
+  web:
+    driver: overlay
+    external: true

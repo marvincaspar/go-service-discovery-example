@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+  user-service:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8099:8099
+    networks:
+      - web
+
+networks:
+  web:
+    driver: overlay
+    external: true
