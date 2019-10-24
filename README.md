@@ -35,5 +35,10 @@ After you have started the containers, you can use the following urls to get acc
 
 The greeting service also makes an api call to the user service, just as an example.
 
+### Go template
+
+In the templates folder is the consul configuration for each service. To reduce duplicated code, I use `go generate` to copy this file to each service.
+
+-------
 
 If you have any improvements, feel free to open an issue or create a pull request.
