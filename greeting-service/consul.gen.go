@@ -49,9 +49,10 @@ func (c *client) Register(id, name, host string, port int, path, health string) 
 			Timeout:       "1s",
 		},
 		Tags: []string{
+			"traefik.docker.network=web",
 			"traefik.enable=true",
-			"traefik.tags=api",
-			"traefik.tags=external",
+			"traefik.frontend.rule=Host:localhost;PathPrefixStrip:/" + name,
+			"traefik.frontend.entryPoints=http",
 			"traefik.backend=" + name,
 		},
 	}

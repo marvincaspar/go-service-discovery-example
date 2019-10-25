@@ -30,8 +30,8 @@ After you have started the containers, you can use the following urls to get acc
 
 - Consul: http://localhost:8500/ui/dc1/services
 - Traefik: http://localhost:8080/dashboard/
-- Greetring-Service: http://localhost:8098/api/greeting/v1/hello/
-- User-Service: http://localhost:8099/api/user/v1/hello/
+- Greetring-Service: http://localhost/greeting-service/api/greeting/v1/hello/
+- User-Service: http://localhost/user-service/api/users/v1/hello
 
 The greeting service also makes an api call to the user service, just as an example.
 
